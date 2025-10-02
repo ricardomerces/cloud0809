@@ -17,7 +17,7 @@ O projeto consiste em:
     docker build -t cloud0809 .
     ```
 
-2.  **Execute o contêiner:**
+2.  **Execute o contêiner localmente**
     ```bash
     docker run -d -p 8080:80 cloud0809
     ```
