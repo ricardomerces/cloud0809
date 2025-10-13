@@ -1,0 +1,19 @@
+---
+- name: Instalar e configurar o Nginx em servidores Ubuntu
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Atualizar a lista de pacotes
+      apt:
+        update_cache: yes
+
+    - name: Instalar o Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Habilitar e iniciar o serviço Nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: true
