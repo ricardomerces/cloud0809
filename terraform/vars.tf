@@ -22,10 +22,11 @@ variable "instance_type" {
 }
 
 
-# Variável para o ID do Security Group
-variable "security_group_id" {
-  description = "ID do Security Group a ser associado à instância EC2. - SSH"
-  type        = string
-  default     = "sg-0f3309cd5f6127169"
-
+variable "security_group_ids" {
+  description = "Lista de IDs dos Security Groups a serem associados à instância EC2. - SSH e outros"
+  type        = list(string)
+  default     = [
+    "sg-0f3309cd5f6127169",
+    "sg-03cac97dff6d684a8"
+  ]
 }
